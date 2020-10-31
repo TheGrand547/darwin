@@ -63,6 +63,12 @@ int main(int argc, char* argv[])
 
     FILE* f = fopen(in_file, "rb");
 
+    if (f == NULL)
+    {
+        perror("Can't open in file");
+        return 2;
+    }
+
     int currentChar;
     while((currentChar = fgetc(f)) != EOF)
     {
@@ -111,6 +117,12 @@ int main(int argc, char* argv[])
     }
     
     FILE* f2 = fopen(out_file, "wb");
+    if (f2 == NULL)
+    {
+        perror("Can't open out file");
+        return 3;
+    }
+
     fwrite(outBuffer, 1, out_size, f2);
     fclose(f2);
     return 0;
