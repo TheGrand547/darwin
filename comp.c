@@ -49,7 +49,7 @@ int GetInst(char* line, char* inst, char* arg)
 
 int main(int argc, char* argv[])
 {
-    if (argc !=  3 && !strstr(argv[2], ".cdwn") && !strstr(argv[1], ".darwin"))
+    if (argc !=  3 || !strstr(argv[2], ".cdwn") || !strstr(argv[1], ".darwin"))
     {
         printf("Usage: %s inputfile.darwin outputfile.cdwn\n", argv[0]);
         return 1;
