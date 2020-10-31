@@ -72,6 +72,8 @@ int main(int argc, char* argv[])
             sizeLine++;
             sizeChar = 0;
         } else {
+            if (currentChar >= 'a' && currentChar <= 'z') //if it's a lowercase character make it a uppercase one 
+                currentChar -= 32;
             lines[sizeLine][sizeChar] = currentChar;
             sizeChar++;
         }
